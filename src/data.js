@@ -1,3 +1,3 @@
-const getData = async () => [];
+const getData = async () => [{}];
 
 export default getData;
