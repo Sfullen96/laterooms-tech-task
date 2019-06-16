@@ -2,7 +2,7 @@ import getData from '../data';
 import chai from 'chai';
 
 chai.use(require('chai-json-schema'));
-const { should, expect } = chai;
+const { expect } = chai;
 
 describe('getData()', () => {
   const dataSchema = {
@@ -18,7 +18,6 @@ describe('getData()', () => {
       },
       facilities: {
         type: 'array',
-        minItems: 1,
         uniqueItems: true,
         items: {
           type: 'string',
@@ -41,6 +40,7 @@ describe('getData()', () => {
   });
 
   it('should contain the correct properties', () => {
-    expect(data[0]).to.be.jsonSchema(dataSchema);
+    const expects = [];
+    data.forEach(d => expect(d).to.be.jsonSchema(dataSchema));
   });
 });
