@@ -20,6 +20,6 @@ describe('<App />', () => {
   });
 
   it('should contain the <Filter /> component', () => {
-    expect(wrapper.containsMatchingElement(<Filter />)).toEqual(true);
+    expect(wrapper.find('Filter').length).toEqual(1);
   });
 });

@@ -6,7 +6,7 @@ import Filter from '../../components/Filter/Filter';
 describe('<Filter />', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<Filter />);
+    wrapper = shallow(<Filter clearFilter={jest.fn()} filter={jest.fn()} />);
   });
 
   it('should render without crashing', () => {
@@ -14,29 +14,39 @@ describe('<Filter />', () => {
   });
 
   it('should render a list of facilities', () => {
-    wrapper.setProps({ filters: ['car park', 'gym', 'pool'] });
+    wrapper.setProps({ facilities: ['car park', 'gym', 'pool'] });
 
     expect(wrapper.find('.filter__facilities-dropdown').length).toEqual(1);
     expect(
       wrapper
         .find('.filter__facilities-dropdown')
         .find('option')
-        .first()
+        .at(1)
         .text(),
     ).toEqual('car park');
     expect(
       wrapper
         .find('.filter__facilities-dropdown')
         .find('option')
-        .at(1)
+        .at(2)
         .text(),
     ).toEqual('gym');
     expect(
       wrapper
         .find('.filter__facilities-dropdown')
         .find('option')
-        .at(2)
+        .at(3)
         .text(),
     ).toEqual('pool');
+  });
+
+  it('should do something', () => {
+    wrapper.setProps({ facilities: ['car park', 'gym', 'pool'] });
+
+    wrapper
+      .find('.filter__facilities-dropdown')
+      .simulate('change', { target: { value: 'car park' } });
+    console.log(wrapper.find('.filter__facilities-dropdown').props());
+    expect(wrapper.find('.filter__facilities-dropdown').props().value).toEqual('car park');
   });
 });

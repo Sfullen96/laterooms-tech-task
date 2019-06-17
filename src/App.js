@@ -5,14 +5,17 @@ import './App.scss';
 
 import SearchResults from './components/SearchResults/SearchResults';
 import Filter from './components/Filter/Filter';
-import { getData } from './data';
+import { getData, getFilters } from './data';
 
 function App() {
-  const [results, setResults] = useState([]);
+  const [data, setData] = useState([]);
+  const [selectedFacility, setSelectedFacility] = useState('');
+
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getData();
-      setResults(data);
+      const results = await getData();
+      const filters = await getFilters();
+      setData({ results, filters });
     };
 
     // Simulate an API call
@@ -21,10 +24,19 @@ function App() {
     }, 1500);
   }, []);
 
+  const filter = async e => {};
+
+  const clearFilter = async () => {};
+
   return (
     <Container className="App">
-      <Filter />
-      <SearchResults results={results} />
+      <Filter
+        facilities={data.filters}
+        filter={filter}
+        selectedFilter={selectedFacility}
+        clearFilter={clearFilter}
+      />
+      <SearchResults results={data.results} />
     </Container>
   );
 }
