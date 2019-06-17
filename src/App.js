@@ -1,13 +1,15 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
+
 import './App.scss';
 
 import SearchResults from './components/SearchResults/SearchResults';
 
 function App() {
   return (
-    <div className="App">
+    <Container className="App">
       <SearchResults />
-    </div>
+    </Container>
   );
 }
 

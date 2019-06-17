@@ -11,7 +11,7 @@ describe('<App />', () => {
   });
 
   it('renders without crashing', () => {
-    expect(wrapper.find('div.App').length).toEqual(1);
+    expect(wrapper.find('Container.App').length).toEqual(1);
   });
 
   it('should contain the <SearchResults /> component', () => {
