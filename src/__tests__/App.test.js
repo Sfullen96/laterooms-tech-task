@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 
 import App from '../App';
 import SearchResults from '../components/SearchResults/SearchResults';
+import Filter from '../components/Filter/Filter';
 
 describe('<App />', () => {
   let wrapper;
@@ -16,5 +17,9 @@ describe('<App />', () => {
 
   it('should contain the <SearchResults /> component', () => {
     expect(wrapper.containsMatchingElement(<SearchResults />)).toEqual(true);
+  });
+
+  it('should contain the <Filter /> component', () => {
+    expect(wrapper.containsMatchingElement(<Filter />)).toEqual(true);
   });
 });

@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Filter = () => null;
+import './Filter.scss';
+
+const Filter = () => <div className="filter"></div>;
 
 export default Filter;
