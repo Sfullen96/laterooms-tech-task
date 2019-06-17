@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 import Filter from '../../components/Filter/Filter';
 
@@ -39,14 +39,16 @@ describe('<Filter />', () => {
         .text(),
     ).toEqual('pool');
   });
+});
 
-  it('should do something', () => {
-    wrapper.setProps({ facilities: ['car park', 'gym', 'pool'] });
+describe('Mounted <Filter />', () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = mount(<Filter clearFilter={jest.fn()} filter={jest.fn()} />);
+  });
 
-    wrapper
-      .find('.filter__facilities-dropdown')
-      .simulate('change', { target: { value: 'car park' } });
-    console.log(wrapper.find('.filter__facilities-dropdown').props());
-    expect(wrapper.find('.filter__facilities-dropdown').props().value).toEqual('car park');
+  it('should update the dropdown on change', () => {
+    wrapper.setProps({ facilities: ['car park', 'gym', 'pool'], selectedFilter: 'car park' });
+    expect(wrapper.find('select').props().value).toEqual('car park');
   });
 });

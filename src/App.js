@@ -24,10 +24,19 @@ function App() {
     }, 1500);
   }, []);
 
-  const filter = async e => {};
+  const filter = async e => {
+    e.persist();
+    setSelectedFacility(e.target.value);
+    const results = await getData();
+    const newResults = results.filter(d => d.facilities.indexOf(e.target.value) !== -1);
+    setData({ filters: data.filters, results: newResults });
+  };
 
-  const clearFilter = async () => {};
-
+  const clearFilter = async () => {
+    setSelectedFacility('');
+    const results = await getData();
+    setData({ filters: data.filters, results });
+  };
   return (
     <Container className="App">
       <Filter

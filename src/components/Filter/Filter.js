@@ -33,6 +33,7 @@ const Filter = ({ facilities, filter, selectedFilter, clearFilter }) => {
         <Col className="text-center" sm={1}>
           <Button
             variant="outline-dark"
+            className="filter__clear"
             onClick={() => clearFilter()}
             disabled={selectedFilter === ''}
           >
