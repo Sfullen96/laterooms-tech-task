@@ -123,13 +123,13 @@ describe('<SearchResults />', () => {
       wrapper
         .find('.search_results__result')
         .first()
-        .find('.search_results__rating.full-star').length,
+        .find('.full-star').length,
     ).toEqual(4);
     expect(
       wrapper
         .find('.search_results__result')
         .first()
-        .find('.search_results__rating.empty-star').length,
+        .find('.empty-star').length,
     ).toEqual(1);
   });
 
@@ -157,7 +157,7 @@ describe('<SearchResults />', () => {
         .find('.search_results__facility')
         .first()
         .text(),
-    ).toEqual('car park');
+    ).toEqual('car park |');
     expect(
       wrapper
         .find('.search_results__result')
@@ -166,6 +166,6 @@ describe('<SearchResults />', () => {
         .find('.search_results__facility')
         .at(1)
         .text(),
-    ).toEqual('gym');
+    ).toEqual('gym ');
   });
 });
