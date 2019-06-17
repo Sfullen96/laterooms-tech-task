@@ -4,7 +4,8 @@ import { Container } from 'react-bootstrap';
 import './App.scss';
 
 import SearchResults from './components/SearchResults/SearchResults';
-import getData from './data';
+import Filter from './components/Filter/Filter';
+import { getData } from './data';
 
 function App() {
   const [results, setResults] = useState([]);
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <Container className="App">
+      <Filter />
       <SearchResults results={results} />
     </Container>
   );

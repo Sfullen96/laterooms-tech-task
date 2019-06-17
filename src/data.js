@@ -1,4 +1,4 @@
-const getData = async () => [
+export const getData = async () => [
   {
     name: 'hotelone',
     starRating: 5,
@@ -21,4 +21,4 @@ const getData = async () => [
   },
 ];
 
-export default getData;
+export const getFilters = async () => ['car park', 'gym', 'pool'];

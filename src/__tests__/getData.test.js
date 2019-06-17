@@ -1,4 +1,4 @@
-import getData from '../data';
+import { getData } from '../data';
 import chai from 'chai';
 
 chai.use(require('chai-json-schema'));

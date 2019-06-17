@@ -12,4 +12,6 @@ describe('<Filter />', () => {
   it('should render without crashing', () => {
     expect(wrapper.find('div.filter').length).toEqual(1);
   });
+
+  it('should render a list of facilities', () => {});
 });
