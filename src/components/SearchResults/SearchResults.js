@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import Loader from '../Loader/Loader';
 
@@ -10,7 +10,14 @@ const SearchResults = ({ results }) => {
   }
   return (
     <Container className="search_results">
-      <h1>Search Results</h1>
+      <h2>Search Results</h2>
+      <Row>
+        {results.map(result => (
+          <Col xs="12" sm="4" key={result.name} className="search_results__result">
+            {result.name}
+          </Col>
+        ))}
+      </Row>
     </Container>
   );
 };
