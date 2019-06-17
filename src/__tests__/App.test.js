@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import App from '../App';
+import SearchResults from '../components/SearchResults/SearchResults';
 
 describe('<App />', () => {
   let wrapper;
@@ -10,7 +11,10 @@ describe('<App />', () => {
   });
 
   it('renders without crashing', () => {
-    console.log(wrapper.debug());
     expect(wrapper.find('div.App').length).toEqual(1);
+  });
+
+  it('should contain the <SearchResults /> component', () => {
+    expect(wrapper.containsMatchingElement(<SearchResults />)).toEqual(true);
   });
 });
