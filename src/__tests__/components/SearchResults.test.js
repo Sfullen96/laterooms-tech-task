@@ -48,4 +48,118 @@ describe('<SearchResults />', () => {
 
     expect(wrapper.find('.search_results__result').length).toEqual(3);
   });
+
+  it('should contain the hotel name', () => {
+    wrapper.setProps({
+      results: [
+        {
+          name: 'hotelone',
+          starRating: 4,
+          facilities: ['car park'],
+        },
+      ],
+    });
+
+    expect(
+      wrapper
+        .find('.search_results__result')
+        .first()
+        .find('.search_results__name').length,
+    ).toEqual(1);
+    expect(
+      wrapper
+        .find('.search_results__result')
+        .first()
+        .find('.search_results__name')
+        .text(),
+    ).toEqual('hotelone');
+  });
+
+  it('should contain the hotel image', () => {
+    wrapper.setProps({
+      results: [
+        {
+          name: 'hotelone',
+          starRating: 4,
+          facilities: ['car park'],
+          image: 'https://t-ec.bstatic.com/images/hotel/max1024x768/195/195322802.jpg',
+        },
+      ],
+    });
+    expect(
+      wrapper
+        .find('.search_results__result')
+        .first()
+        .find('.search_results__image').length,
+    ).toEqual(1);
+
+    expect(
+      wrapper
+        .find('.search_results__result')
+        .first()
+        .find('.search_results__image')
+        .props().src,
+    ).toEqual('https://t-ec.bstatic.com/images/hotel/max1024x768/195/195322802.jpg');
+  });
+
+  it('should contain the hotel star rating', () => {
+    wrapper.setProps({
+      results: [
+        {
+          name: 'hotelone',
+          starRating: 4,
+          facilities: ['car park'],
+        },
+      ],
+    });
+    expect(
+      wrapper
+        .find('.search_results__result')
+        .first()
+        .find('.search_results__rating').length,
+    ).toEqual(1);
+    expect(
+      wrapper
+        .find('.search_results__result')
+        .first()
+        .find('.search_results__rating')
+        .text(),
+    ).toEqual('4');
+  });
+
+  it('should list the hotel facilities', () => {
+    wrapper.setProps({
+      results: [
+        {
+          name: 'hotelone',
+          starRating: 4,
+          facilities: ['car park', 'gym'],
+        },
+      ],
+    });
+    expect(
+      wrapper
+        .find('.search_results__result')
+        .first()
+        .find('.search_results__facilities').length,
+    ).toEqual(1);
+    expect(
+      wrapper
+        .find('.search_results__result')
+        .first()
+        .find('.search_results__facilities')
+        .find('.search_results__facility')
+        .first()
+        .text(),
+    ).toEqual('car park');
+    expect(
+      wrapper
+        .find('.search_results__result')
+        .first()
+        .find('.search_results__facilities')
+        .find('.search_results__facility')
+        .at(1)
+        .text(),
+    ).toEqual('gym');
+  });
 });

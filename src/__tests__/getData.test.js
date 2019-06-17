@@ -8,7 +8,7 @@ describe('getData()', () => {
   const dataSchema = {
     title: 'data',
     type: 'object',
-    required: ['name', 'starRating', 'facilities'],
+    required: ['name', 'starRating', 'facilities', 'image'],
     properties: {
       name: {
         type: 'string',
@@ -22,6 +22,9 @@ describe('getData()', () => {
         items: {
           type: 'string',
         },
+      },
+      image: {
+        type: 'string',
       },
     },
   };
