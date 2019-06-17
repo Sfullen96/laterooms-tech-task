@@ -1,0 +1,16 @@
+.search_results {
+  &__result {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #f6f6f6;
+    padding: 20px 15px;
+  }
+  &__image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+  &__name {
+    text-align: center;
+    font-size: 24px;
+  }
+}
