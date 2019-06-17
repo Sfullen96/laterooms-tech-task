@@ -118,13 +118,19 @@ describe('<SearchResults />', () => {
         .first()
         .find('.search_results__rating').length,
     ).toEqual(1);
+
     expect(
       wrapper
         .find('.search_results__result')
         .first()
-        .find('.search_results__rating')
-        .text(),
-    ).toEqual('4');
+        .find('.search_results__rating.full-star').length,
+    ).toEqual(4);
+    expect(
+      wrapper
+        .find('.search_results__result')
+        .first()
+        .find('.search_results__rating.empty-star').length,
+    ).toEqual(1);
   });
 
   it('should list the hotel facilities', () => {

@@ -25,7 +25,7 @@ const SearchResults = ({ results }) => {
               />
               <Figure.Caption>
                 <p className="search_results__name">{result.name}</p>
-                <p className="search_results__rating">{result.starRating}</p>
+                <div className="search_results__rating">{result.starRating}</div>
                 {Boolean(result.facilities.length) && (
                   <ul className="search_results__facilities">
                     {result.facilities.map(facility => (
