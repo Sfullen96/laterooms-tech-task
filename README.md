@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# LateRooms - Tech Task - Sam Fullen
+The technical task for LateRooms, by Sam Fullen.
 
-## Available Scripts
+## Getting Started
+### Prerequisites
+- You must have a recent version of Node JS installed on your machine [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+- You must also have npm installed on your machine [https://www.npmjs.com/get-npm](https://www.npmjs.com/get-npm)
+- You must have git installed on your machine to clone the repository
+### Clone the repository [https://github.com/Sfullen96/laterooms-tech-task](https://github.com/Sfullen96/laterooms-tech-task)
+`git clone https://github.com/Sfullen96/laterooms-tech-task.git`
+### Navigate into the folder
+```
+cd laterooms-tech-task
+```
+### Install the node modules
+```
+npm install
+```
+### Run the start script
+```
+npm run start
+```
+---
+## Built With
+- [React JS](https://reactjs.org/)
+- [Create React App](https://github.com/facebook/create-react-app)
+- HTML/CSS/Jsx
+- [SASS](https://sass-lang.com/)
+- [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) (with react-bootstrap [node module](https://react-bootstrap.netlify.com/))
+- [Jest](https://jestjs.io/)
+- [Enzyme](https://github.com/airbnb/enzyme) - For shallow render testing and snapshot tests
+- [ESLint](https://eslint.org/) - Using the prettier and AirBnb configs
+- [Prettier](https://prettier.io/)
+- [Prop Types](https://www.npmjs.com/package/prop-types)
+- [Chai](https://www.chaijs.com/)
+---
+## Directory Structure
+- All source code can be found in the /src directory
+- The /src/components holds all components
+- `/src/__tests__` contains all tests
+- `/src/index.js` - The applications entry point
+- `/src/App.js` - The main component
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Running tests
+- `npm run test` - Tests may cache and it therefore might tell you there are no tests to run, if you see this message just press 'a'
+- `npm run lint` to check there's no ESlint issues
