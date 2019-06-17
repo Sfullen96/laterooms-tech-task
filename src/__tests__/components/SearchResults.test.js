@@ -24,4 +24,28 @@ describe('<SearchResults />', () => {
     });
     expect(wrapper.find('Container.search_results').length).toEqual(1);
   });
+
+  it('should render a tile per result', () => {
+    wrapper.setProps({
+      results: [
+        {
+          name: 'hotelone',
+          starRating: 4,
+          facilities: ['car park'],
+        },
+        {
+          name: 'hoteltwo',
+          starRating: 1,
+          facilities: ['car park', 'gym'],
+        },
+        {
+          name: 'hotelthree',
+          starRating: 3,
+          facilities: [],
+        },
+      ],
+    });
+
+    expect(wrapper.find('.search_results__result').length).toEqual(3);
+  });
 });
